@@ -1,6 +1,25 @@
 #include <iostream> 
 using namespace std; 
 
+void intercambioDirecto(int a[], int elementos){
+	int aux; 
+	for(int i=0; i<elementos-1; i++){
+		for(int j=i+1; j<elementos; j++){
+			if(a[i] > a[j]){
+				aux = a[i];
+				a[i] = a[j];
+				a[j] = aux; 
+			}
+		}
+	}
+	
+	cout<<"\nOrdenacion directa por la derecha: "; 
+	for(int i=0; i<elementos; i++){
+		cout<<a[i]<<" ";  
+	} 
+	cout<<endl; 
+}
+
 int main(){
 	int n; 
 	int opcion;
@@ -36,7 +55,7 @@ int main(){
 	
 	switch(opcion){
 		case 1: {
-			
+			intercambioDirecto(array, n); 
 			break;
 		}
 		case 2: {
